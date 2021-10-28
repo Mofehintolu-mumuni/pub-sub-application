@@ -17,7 +17,7 @@ class SubscribedTopicRepository implements ModelRepositoryInterface {
         $this->modelInstance = $topic;
     }
 
-    public function findByTopicId($topicId):Object|null {
+    public function findByTopicId($topicId): ?Object{
         return $this->modelInstance::where('topic_id', $topicId)->first();
     }
 

@@ -16,7 +16,7 @@ class SubscriberRepository implements ModelRepositoryInterface {
         $this->modelInstance = $subscriber;
     }
 
-    public function findByName($subscriberUrl):Object|null {
+    public function findByName($subscriberUrl): ?Object {
         return $this->modelInstance::where('subscriber_url', $subscriberUrl)->first();
     }
 
@@ -30,7 +30,7 @@ class SubscriberRepository implements ModelRepositoryInterface {
         
     }
 
-    public function getSubscriberWithTopicRelations(int $topicId, int $subscriberId):Object|null {
+    public function getSubscriberWithTopicRelations(int $topicId, int $subscriberId):?Object  {
         return $this->modelInstance::with(['topic' => function($query) use ($topicId){
                                                  $query->where('topic_id', $topicId);
                                             }])

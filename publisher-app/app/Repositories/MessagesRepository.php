@@ -16,7 +16,7 @@ class MessagesRepository implements ModelRepositoryInterface {
         $this->modelInstance = $message;
     }
 
-    public function create(array $data): Object|null {
+    public function create(array $data): ?Object {
         return $this->modelInstance::create($data);
     }
 

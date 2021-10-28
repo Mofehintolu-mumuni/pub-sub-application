@@ -1,0 +1,167 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Publisher App",
+        "version": "0.1"
+    },
+    "paths": {
+        "/api/create-topic": {
+            "post": {
+                "tags": [
+                    "Publisher app"
+                ],
+                "summary": "create a topic| route('create-topic')",
+                "description": "create a topic ",
+                "operationId": "2a346aea3f430b75d7661575be541648",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "title": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "title": "Topic title"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successfully"
+                    },
+                    "422": {
+                        "description": "Validation error"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/publish/{topicId}": {
+            "post": {
+                "tags": [
+                    "Publisher app"
+                ],
+                "summary": "Publish message for a topic | route('/publish/{topicId}')",
+                "description": "Publish message for a topic ",
+                "operationId": "0843d4926159c0e665d81f639ccf6bcc",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "message": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "message": "Hello world"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successfully"
+                    },
+                    "422": {
+                        "description": "Validation error"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/subscribe/{topicId}": {
+            "post": {
+                "tags": [
+                    "Publisher app"
+                ],
+                "summary": "Subscribe a topic| route('/subscribe/{topicId}')",
+                "description": "Subscribe to a topic ",
+                "operationId": "a4c2a2e9c917262e6cbabdcb444f153e",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "url": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "url": "http://localhost:9900"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successfully"
+                    },
+                    "422": {
+                        "description": "Validation error"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        },
+        "/api/topic/list": {
+            "get": {
+                "tags": [
+                    "Publisher app"
+                ],
+                "summary": "List topics | route('/topic/list')",
+                "description": "List topics ",
+                "operationId": "dae987a366dd014ac6a93e050fde7bb2",
+                "responses": {
+                    "200": {
+                        "description": "Successfully"
+                    },
+                    "422": {
+                        "description": "Validation error"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        }
+    },
+    "security": [
+        []
+    ]
+}

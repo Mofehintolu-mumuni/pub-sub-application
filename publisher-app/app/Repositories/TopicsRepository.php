@@ -18,11 +18,11 @@ class TopicsRepository implements ModelRepositoryInterface {
         $this->modelInstance = $topic;
     }
 
-    public function findByName($topicName):Object|null {
+    public function findByName($topicName) {
         return $this->modelInstance::where('title', $topicName)->first();
     }
 
-    public function findById($topicId):Object|null {
+    public function findById($topicId) {
         return $this->modelInstance::where('id', $topicId)->first();
     }
 
